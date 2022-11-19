@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>function</title>
+        <script>
+            function displaydate(){
+var date=new Date()
+console.log(date)
+console.log(date.getFullYear())
+console.log(date.getDay())
+document.getElementById("date").innerHTML=date
+document.getElementById("date").style.color="red"
+/*window.location.href="img1.png"*/
+//function express//
+ var output= function display(){
+    console.log("calling display")
+}
+//console.log(output)//
+output()
+
+
+// anonimus function"(function without name)
+
+var anonimous=function(){
+    console.log("calling anonimus function")
+}
+anonimous()
+
+var a
+a=10
+console.log(a) 
+var a
+console.log(a)
+let b //if we use let multiple variables with same name cannot be created
+b="script"
+console.log(b)
+const PI=3.142 //constant variable creation
+console.log(PI)
+// diffrence between var let and const
+
+
+
+//for loop in java script
+//for (let i=0;i<10;i++){
+    //console.log("learning loop in java script")
+//}
+
+
+
+//array in java script
+let arr=[1,2,3,4,5]
+console.log(arr)
+
+
+let arr1=[1,2,"javascript"]
+console.log(arr1)
+for(let i=0;i>arr1.length;i++) {
+    console.log(arr1[i])
+}
+
+let arr3=[]
+arr3.push(5)
+arr3.push(6)//add an element at end of the array
+arr3.push(7)
+console.log(arr3)
+
+
+arr3.pop()// remove an element from end of the array
+console.log(arr3)
+
+
+arr3.unshift(10)//add element at the begining of the array
+console.log(arr3)
+arr3.unshift(11)
+console.log(arr3)
+
+
+arr3.shift()//remove an element from the begining of the array
+console.log(arr3)
+
+
+var movie={
+"moviename":"kantara",
+"price":200
+}
+var movie1={
+    "moviename":"caluvinacitara",
+    "price":200
+}
+console.log(movie)
+console.log(movie1)
+
+let movies=[]
+movies.push(movie)
+movies.push(movie1)
+console.log(movies)
+
+
+
+
+
+
+
+            }
+
+            
+        </script>
+    </head>
+    <body>
+        <button onclick="displaydate()">click on me i will display date</button>
+        <div id="date"></div>
+    </body>
+</html>
