@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function validate() {
+        console.log("calling validate function")
+        var userName = document.getElementById("userName")
+        console.log(userName.value)
+        console.log(userName.value.length)
+        if(userName.value==''){
+            console.log("plese enter userName")
+            var errorUserName = document.getElementById("errorUserName")
+            errorUserName.innerHTML="please  enter user name"
+            errorUserName.style.color='blue'
+        }
+       var email= document.getElementById("email")
+       console.log(email.value)
+       if(email.value==''){
+        console.log("please enter mail")
+        var erroremail = document.getElementById("errorinemail")
+            erroremail.innerHTML="please  enter mail"
+            erroremail.style.color='green'
+       }
+       var password= document.getElementById("password")
+       console.log(password.value)
+       if(password.value==''){
+        console.log("please enter mail")
+        var errorpassword = document.getElementById("errorinPassword")
+            errorpassword.innerHTML="please enter password"
+            errorpassword.style.color='pink'
+       }
+       var gender= document.formRegister.gender
+       console.log(gender)
+
+       console.log(gender[0])
+       console.log(gender[1])
+       console.log(gender[2])
+       console.log(gender[0].checked)
+       console.log(gender[1].checked)
+       console.log(gender[2].checked)      
+       
+       if(gender[0].checked == false && (gender[1].checked) == false &&  (gender[2].checked) == false ){
+        console.log("Please select gender")
+    }
+    var city = document.formRegister.city
+    console.log(city)
+    if(city.value=="0"){
+        console.log("Please select City")
+        var city = document.getElementById("errorCity")
+        city.innerHTML = "Please Select City"
+        city.style.color = "black"
+    }
+    console.log(userName.value)
+    console.log(password.value)
+    console.log(email.value)
+    var obj = {
+        "username": userName.value,
+        "email": email.value,
+        "password": password.value,
+    }
+    console.log(obj)
+    localStorage.setItem("javascript","Bootstrap")
+    var objString = JSON.stringify(obj)
+    console.log(objString)
+    localStorage.setItem("XworkzUser",objString)
+    localStorage.getItem("XworkzUser")
+    }
+     </script>
+<body>
+    <!--Form-->
+    <form name="formRegister">
+        <label>Enter Username</label>
+        <input type="text" name="username" id="userName">
+        <span id="errorUserName"></span>
+        
+        
+        <div  >
+            <label>Enter email</label>
+            <input type="email" name="email" id="email">
+            <span id="errorinemail"></span>
+            
+         </div>
+        <div>
+            <label>Enter password</label>
+            <input type="password" name="password" id="password">
+            <span id="errorinPassword">
+            </span>
+           
+            
+            <div>
+                <label>Select gender</label>
+                <input type="radio" name="gender" > Male
+                <input type="radio" name="gender"> Female
+                <input type="radio" name="gender"> Others
+                <span id="SelectGender"></span>
+                
+                <!-- document.formName-->
+                <div>
+                    <label>Select City</label>
+                    <select name="city">
+                        <option value="0">--select City--</option>
+                        <option>Bangloor</option>
+                        <option>Shivamogga</option>
+                        <option>Bagalkot</option>
+                        <option>mysuru</option>
+                        <option>mangloor</option>
+                        <option>mandya</option>
+                        <option>chkkamagalooru</option>
+                        <option>madkeri</option>
+                        <option>Hasana</option>
+                        <option>Chamarajnagara</option>
+                    </select>
+                    <span id="errorCity"></span>
+                </div>
+                <div>
+                    <button type="button" onclick="validate()">Register</button>
+                    <button type="reset">Reset</button>
+                </div>
+                
+            </div>
+        </div>
+    </form>
+    <!-- when u click button 
+    generate an event
+input - click button
+output - error message 
+how to check the numeric in user name using javascript-->
+    <!--Storage-->
+
+   
+    
+</body>
+</html>

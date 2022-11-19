@@ -1,0 +1,51 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="logincss.css">  
+<script>
+   function login(){
+email =document.getElementById("email")
+var password =document.getElementById("password")
+console.log(email.value)
+console.log(password.value)
+
+var registereduser = localStorage.getItem("XworkzUser")
+console.log(registereduser)
+console.log(registereduser.email)
+var registeredobj= JSON.parse(registereduser)
+
+console.log(registeredobj)
+if(email.value == registeredobj.email && 
+password.value == registeredobj.password) {
+console.log("Login success")
+//window.location.href="https://x-workz.in/"
+window.location.href="./index.html"
+//navigate to html page
+
+   } else {
+   
+      console.log("Invalid email or password")
+
+
+   }
+}
+</script>
+   </head>
+   <body>
+      <h1> LOGIN FORM</h1>
+      <form>
+         <div class="email">
+            <label>Enter Email </label>
+            <input type="email" name="password" id="email">
+         </div>
+         <div class ="password">
+            <label>Enter password</label>
+            <input type="password" name="password"  id="password">
+         </div>
+         <div class="button">
+         <button type="button" onclick="login()">Login</button>
+         <button>Reset</button>
+      </div>
+         
+      </form>
+   </body>
+</html>
